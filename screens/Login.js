@@ -5,6 +5,7 @@ import validator from "validator";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from '../utils/Config';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import Colors from '../utils/Colors';
 
 const validateFields = (email, password) => {
   const isValid = {
@@ -53,7 +54,7 @@ export default () => {
 
   return <View style={styles.container}>
   <Text style={styles.header}>Habits</Text>
-  <View style={{ flex: 1 }}>
+  <View style={{ flex: 1, justifyContent: 'center'}}>
       <InputField
           label="Email"
           text={emailField.text}
@@ -95,8 +96,8 @@ export default () => {
           <Text
               style={{
                   alignSelf: "center",
-                  color: 'blue',
-                  fontSize: 16,
+                  color: Colors.blue,
+                  fontSize: 24,
                   margin: 4,
               }}
           >
@@ -153,24 +154,23 @@ export default () => {
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      backgroundColor: "#fff",
-      justifyContent: "space-between",
-      alignItems: "stretch",
+      flexDirection: 'column',
+      backgroundColor: Colors.cream,
   },
   label: { 
     fontSize: 16, 
     fontWeight: "bold", 
-    color: 'black' 
+    color: Colors.darkGray 
   },
   header: { 
     fontSize: 72, 
-    color: 'black',
+    color: Colors.darkGray,
     alignSelf: "center" 
   },
   button: {
     flexDirection: "row",
     borderRadius: 25,
-    backgroundColor: 'gray',
+    backgroundColor: Colors.blue,
     height: 48,
     margin: 16,
     justifyContent: "center",

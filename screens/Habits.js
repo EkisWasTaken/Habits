@@ -68,7 +68,7 @@ export default ({navigation, route}) => {
 
   let deleteHabits = async (habitId) => {
     await deleteDoc(doc(db, "habits", habitId));
-    let updatedHabit = [...habits].some((item) => item.id != habitId);
+    let updatedHabit = [...habits].filter((item) => item.id != habitId);
     setHabits(updatedHabit);
   };
 

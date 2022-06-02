@@ -9,7 +9,7 @@ import moment from 'moment';
 
 const openSettings = () => {
   return(
-    <TouchableOpacity style={styles.settingsBtn} onPress={() => auth.logOut()}>
+    <TouchableOpacity style={styles.settingsBtn} onPress={() => auth.signOut()}>
         <Ionicons name="log-out-outline" size={24} color='white'/>
     </TouchableOpacity>
   )
@@ -48,7 +48,7 @@ export default ({navigation}) => {
     setHabitsToday(habitsT);
     setHabits(habits);
     setMarkedDates(dates);
-  }, [habits]);
+  }, []);
 
 
   useLayoutEffect(() => {
@@ -67,9 +67,9 @@ export default ({navigation}) => {
         }}
         renderArrow={(direction) => {
           if (direction == 'left') {
-              return (<Text>{'<'}</Text>)
+              return (<Ionicons name="chevron-back" size={24} color={Colors.blue}/>)
           } else {
-              return (<Text>{'>'}</Text>)
+              return (<Ionicons name="chevron-forward" size={24} color={Colors.blue}/>)
           }
       }}
       />
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   box: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.teal,
     marginHorizontal: 10,
     marginVertical: 5,
     borderRadius: 20,

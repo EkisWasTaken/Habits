@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     input: {
-        borderBottomColor: Colors.gray,
-        borderBottomWidth: 1,
-        paddingLeft: 4,
-        height: 32,
-        fontSize: 24,
-        color: Colors.black,
+        borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        backgroundColor: 'white',
     },
 });
